@@ -1,0 +1,21 @@
+<configuration>
+    <!-- Created by songxiao on 9/23/17. -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.eclipse.jetty" level="warn"></logger>
+    <logger name="Remoting" level="warn"></logger>
+    <!--<logger name="org.apache.spark.deploy" level="info"></logger> removed for testing -->
+    <logger name="org.apache" level="warn"></logger>
+    <logger name="hive" level="warn"></logger>
+    <logger name="org.spark-project.jetty" level="warn"></logger>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

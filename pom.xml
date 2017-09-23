@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>spark-starter</groupId>
+	<artifactId>spark-starter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<sourceDirectory>${basedir}/src/main/scala</sourceDirectory>
+		<testSourceDirectory>${basedir}/src/test/scala</testSourceDirectory>
+		<finalName>spark-starter</finalName>
+	</build>
+
+	<properties>
+		<java.level>1.8</java.level>
+		<main.class>com.spark.starter.Main</main.class>
+		<add.classpath>true</add.classpath>
+		<scala.version>2.10.4</scala.version>
+		<spark.version>1.6.1</spark.version>
+		<scala.binary.version>2.10</scala.binary.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_${scala.binary.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<!-- Optional Spark lib -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_${scala.binary.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-hive_${scala.binary.version}</artifactId>
+			<version>${spark.version}</version>
+			<scope>${project.dependencies.scope.provided}</scope>
+		</dependency>
+
+		<!-- Testing framework -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scalatest</groupId>
+			<artifactId>scalatest_${scala.binary.version}</artifactId>
+			<version>2.2.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scalamock</groupId>
+			<artifactId>scalamock-scalatest-support_${scala.binary.version}</artifactId>
+			<version>3.2.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
